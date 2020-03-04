@@ -1,0 +1,31 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-combine-routers": "^4.0.2",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "dev:watch": "tsc -w",
+    "dev:server": "nodemon node dist/app.js",
+    "dev": "tsc && concurrently npm:dev:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@106.12.202.39:13822/root/test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
