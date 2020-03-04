@@ -2,13 +2,25 @@
 //   target.isTest = true;
 // }
 
-// function readonly(target: any, name: string) {
-// }
+// @testable
+// class Person {}
+// console.log((Person as any).isTest);
 
-// class Person {
-//   @readonly
-//   name: string = "mickey";
+// function testMethod(target: any, name: string, descriptor: PropertyDescriptor) {
+//   const oldFn = descriptor.value;
+//   descriptor.value = function() {
+//     console.log("method called");
+//     oldFn();
+//   };
 // }
+// class Person {
+//   @testMethod
+//   getName() {
+//     return "mickey";
+//   }
+// }
+// // 会打印出'method called'
+// new Person().getName();
 
 // function catchError(msg: string) {
 //   return function(target: any, name: string, descriptor: PropertyDescriptor) {
